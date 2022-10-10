@@ -537,23 +537,23 @@ section .location {
   height: 5px;
 }
 
-.level.débutant .bar::after {
+.level.dÃ©butant .bar::after {
   background: #eb5f51;
   width: 2.5em;
 }
 
-.level.intermédiaire .bar::after {
+.level.intermÃ©diaire .bar::after {
   background: #ffdf1f;
   width: 5em;
 }
 
-.level.avancé .bar::after,
+.level.avancÃ© .bar::after,
 .level.courant .bar::after {
   background: #5cb85c;
   width: 7.5em;
 }
 
-.level.maîtrise .bar::after,
+.level.maÃ®trise .bar::after,
 .level.langue.maternelle .bar::after {
   background: #59c596;
   width: 10em;
@@ -721,7 +721,7 @@ section .location {
     margin: 0.5em 0 0 0;
   }
   ul.keywords::before {
-    content: "Compétences acquises: ";
+    content: "CompÃ©tences acquises: ";
   }
   #skills .keywords::before {
     content: none;

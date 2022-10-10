@@ -346,7 +346,6 @@ section .location {
 }
 
 .company::before,
-.institution::before,
 .organization::before,
 .awarder::before {
   content: "chez ";
@@ -661,7 +660,6 @@ section .location {
     display: none;
   }
   .company::before,
-  .institution::before,
   .organization::before,
   .awarder::before {
     content: "chez ";

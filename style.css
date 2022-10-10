@@ -347,7 +347,7 @@ section .location {
 .institution::before,
 .organization::before,
 .awarder::before {
-  content: "at ";
+  content: "chez ";
 }
 
 .company,
@@ -537,24 +537,24 @@ section .location {
   height: 5px;
 }
 
-.level.beginner .bar::after {
+.level.débutant .bar::after {
   background: #eb5f51;
   width: 2.5em;
 }
 
-.level.intermediate .bar::after {
+.level.intermédiaire .bar::after {
   background: #ffdf1f;
   width: 5em;
 }
 
-.level.advanced .bar::after,
-.level.fluent .bar::after {
+.level.avancé .bar::after,
+.level.courant .bar::after {
   background: #5cb85c;
   width: 7.5em;
 }
 
-.level.master .bar::after,
-.level.native.speaker .bar::after {
+.level.maîtrise .bar::after,
+.level.langue.maternelle .bar::after {
   background: #59c596;
   width: 10em;
 }
@@ -661,7 +661,7 @@ section .location {
   .institution::before,
   .organization::before,
   .awarder::before {
-    content: "at ";
+    content: "chez ";
   }
   .main-summary {
     padding: 0;
@@ -721,7 +721,7 @@ section .location {
     margin: 0.5em 0 0 0;
   }
   ul.keywords::before {
-    content: "Skills acquired: ";
+    content: "Compétences acquises: ";
   }
   #skills .keywords::before {
     content: none;
@@ -731,7 +731,7 @@ section .location {
     padding: 0;
   }
   ul.courses::before {
-    content: "Major courses: ";
+    content: "Cours principaux: ";
   }
   ul.keywords li:last-of-type::after,
   ul.courses li:last-of-type::after {

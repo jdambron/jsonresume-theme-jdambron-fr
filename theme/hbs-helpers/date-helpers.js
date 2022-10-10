@@ -1,5 +1,7 @@
 const moment = require('moment');
 
+moment.locale('fr');
+
 const dateHelpers = {
   MY: date => moment(date.toString(), ['YYYY-MM-DD']).format('MMM YYYY'),
   Y: date => moment(date.toString(), ['YYYY-MM-DD']).format('YYYY'),

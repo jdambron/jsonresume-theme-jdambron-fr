@@ -326,6 +326,8 @@ section .location {
 .company,
 .organization,
 .institution,
+.certificateName,
+.issuer,
 .date,
 .area,
 .studyType,
@@ -359,6 +361,7 @@ section .location {
 }
 
 .section header .date {
+  float: right;
   display: block;
   font-size: 1rem;
   padding: 0.1em 0;

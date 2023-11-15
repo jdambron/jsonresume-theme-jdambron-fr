@@ -5,7 +5,7 @@
   "author": "Julien Dambron",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jdambron/jsonresume-theme-jdambron"
+    "url": "git+https://github.com/jdambron/jsonresume-theme-jdambron.git"
   },
   "license": "MIT",
   "main": "index.js",

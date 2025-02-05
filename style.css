@@ -647,7 +647,7 @@ section .location {
 }
 
 @media print {
-  #profiles a:not(.hide-href-print)::after{
+  #profiles a:not(.hide-href-print)::after {
     content: " (" attr(href) ") ";
   }
   #profiles .url .show-only-url-print {
@@ -693,7 +693,7 @@ section .location {
   }
   .section > section > section {
     border-bottom: 1px solid #fdfdfd;
-    margin: .5em 0;
+    margin: 0.5em 0;
   }
   .section > section > section:last-of-type {
     margin: 0;
@@ -775,9 +775,6 @@ section .location {
   .level em {
     font-style: normal;
     padding: 0.1em 0;
-  }
-  .level .bar {
-    display: none;
   }
   #profiles .item {
     padding: 0;

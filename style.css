@@ -217,18 +217,9 @@ section .location {
 }
 
 #header > #profiles,
-#header > #contact,
-#skills,
-#languages,
-#interests {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+#header > #contact {
   display: flex;
-  -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
-  -webkit-justify-content: flex-start;
   justify-content: flex-start;
 }
 
@@ -499,20 +490,40 @@ section .location {
   color: #2291c3;
 }
 
+/* Two-column layout */
+
+#layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+#sidebar {
+  background: #f7f9fb;
+  border-right: 1px solid #e4e8ed;
+  padding: 1rem 0.85rem 1rem 0;
+  min-height: 100%;
+}
+
+#sidebar .section-title {
+  background: #f7f9fb;
+}
+
+#main {
+  padding-left: 1.25rem;
+}
+
 #languages .item,
 #skills .item,
 #interests .item {
-  width: 15em;
-  padding: 0 0.5em 0.5em 0;
+  width: 100%;
+  padding: 0 0 0.5em 0;
   border-bottom: none;
 }
 
-#skills .item {
-  width: 16em;
-}
-
 #skills .item .keywords {
-  width: 15em;
+  width: 100%;
 }
 
 /* Skill chart */
@@ -590,39 +601,37 @@ section .location {
 }
 
 /****************
-*		TABLET
+*     SCREEN
 ****************/
 
-@media screen and (min-width: 602px) {
+@media screen and (max-width: 800px) {
+  #layout {
+    grid-template-columns: 1fr;
+  }
+  #sidebar {
+    border-right: none;
+    border-bottom: 1px solid #e4e8ed;
+    padding: 0 0 1rem 0;
+  }
+  #main {
+    padding-left: 0;
+    padding-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 801px) {
   #resume {
-    width: 80%;
-    margin: 0 auto;
+    width: 90%;
+    max-width: 900px;
+    margin: 2rem auto;
   }
   .section header .date {
     float: right;
     font-weight: 600;
     color: #000;
   }
-}
-
-/****************
-*		LAPTOP
-****************/
-
-@media screen and (min-width: 1025px) {
-  li {
-    margin-left: 1.5em;
-  }
-  #resume {
-    width: 820px;
-    margin: 2rem auto;
-  }
-  .section > section > header .space-left {
-    opacity: 1;
-    cursor: pointer;
-  }
   .section > section:not(.main-summary) {
-    margin-left: 1.67rem;
+    margin-left: 0.5rem;
   }
   .company::before,
   .institution::before,
@@ -638,12 +647,6 @@ section .location {
   .section header .date {
     padding: 0.2em;
   }
-  .display {
-    display: none;
-  }
-  .display:not(.none) {
-    display: block;
-  }
 }
 
 @media print {
@@ -657,14 +660,30 @@ section .location {
     content: attr(href);
   }
   #resume {
-    margin: 0.1em;
-    padding: 0.1em;
-    -ms-word-wrap: break-word;
+    margin: 0;
+    padding: 0;
     word-wrap: break-word;
     line-height: 1.25;
   }
+  #layout {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 0;
+  }
+  #sidebar {
+    background: #f7f9fb;
+    border-right: 1px solid #e4e8ed;
+    padding: 0.5rem 0.6rem 0.5rem 0;
+  }
+  #sidebar .section-title {
+    background: #f7f9fb;
+  }
+  #main {
+    padding-left: 1rem;
+    padding-top: 0;
+  }
   @page {
-    margin: 1cm 1.4cm;
+    margin: 1cm 1.2cm;
   }
   .item-count {
     display: none;
@@ -682,7 +701,7 @@ section .location {
     background: transparent;
   }
   .section {
-    margin: 0.8rem 0;
+    margin: 0.6rem 0;
     padding: 0;
   }
   .section header {
@@ -693,7 +712,7 @@ section .location {
   }
   .section > section > section {
     border-bottom: 1px solid #fdfdfd;
-    margin: 0.5em 0;
+    margin: 0.4em 0;
   }
   .section > section > section:last-of-type {
     margin: 0;
@@ -743,7 +762,7 @@ section .location {
     margin: 0;
   }
   .highlights {
-    margin: 0.5em 0 0 0;
+    margin: 0.4em 0 0 0;
   }
   .highlights > li > p {
     margin-bottom: 0.3em;
@@ -779,11 +798,11 @@ section .location {
   #profiles .item {
     padding: 0;
   }
-  .item.display {
-    display: block;
-    opacity: 1 !important;
-  }
   .fa-location-dot:before {
     padding-left: 0.1em;
+  }
+  .work-item,
+  .education-item {
+    page-break-inside: avoid;
   }
 }

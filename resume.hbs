@@ -14,17 +14,23 @@
   <body>
     <div id="resume">
       {{> basics }}
-      {{> skills }}
-      {{> work }}
-      {{> projects }}
-      {{> volunteer }}
-      {{> education }}
-      {{> awards }}
-      {{> certificates }}
-      {{> publications }}
-      {{> languages }}
-      {{> interests }}
-      {{> references }}
+      <div id="layout">
+        <aside id="sidebar">
+          {{> skills }}
+          {{> languages }}
+          {{> certificates }}
+          {{> interests }}
+        </aside>
+        <main id="main">
+          {{> work }}
+          {{> projects }}
+          {{> volunteer }}
+          {{> education }}
+          {{> awards }}
+          {{> publications }}
+          {{> references }}
+        </main>
+      </div>
     </div>
   </body>
 </html>

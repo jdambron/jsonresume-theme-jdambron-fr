@@ -6,23 +6,8 @@
   <section id="languages">
     {{#each resume.languages}}
     <div class="display">
-      {{#if language}}
-      <h3 class="language">
-        {{language}}
-      </h3>
-      {{/if}}
-      <div class="item">
-        {{#if fluency}}
-        <div class="level fluency {{toLowerCase fluency}}">
-          {{#if fluencyDisplay}}
-          <em>{{fluencyDisplay}}</em>
-          {{else}}
-          <em>{{fluency}}</em>
-          {{/if}}
-          <div class="bar"></div>
-        </div>
-        {{/if}}
-      </div>
+      {{#if language}}<h3 class="language">{{language}}</h3>{{/if}}
+      {{#if fluency}}<span class="fluency-label">{{#if fluencyDisplay}}{{fluencyDisplay}}{{else}}{{fluency}}{{/if}}</span>{{/if}}
     </div>
     {{/each}}
   </section>

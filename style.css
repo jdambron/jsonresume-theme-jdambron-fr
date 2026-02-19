@@ -326,6 +326,7 @@ section .location {
 .language,
 .name {
   font-weight: 600;
+  display: inline;
 }
 
 .company::before,
@@ -514,6 +515,12 @@ section .location {
   border-right: 1px solid #e4e8ed;
   padding: 1rem 0.85rem 1rem 0;
   min-height: 100%;
+  overflow: hidden;
+}
+
+#sidebar .keywords li {
+  white-space: normal;
+  font-size: 0.8rem;
 }
 
 
@@ -533,53 +540,16 @@ section .location {
   width: 100%;
 }
 
-/* Skill chart */
-
-.level {
-  margin-bottom: 0.5em;
-}
-
-.level em {
-  padding-left: 0.2em;
-}
-
-.level .bar {
-  border: 1px solid #ddd;
-  display: block;
-  width: 10em;
-  height: 5px;
-  position: relative;
-}
-
-.level .bar::after {
-  position: absolute;
-  content: " ";
-  top: 0;
-  left: 0;
-  background: black;
-  height: 5px;
-}
-
-.level.débutant .bar::after {
-  background: #eb5f51;
-  width: 2.5em;
-}
-
-.level.intermédiaire .bar::after {
-  background: #ffdf1f;
-  width: 5em;
-}
-
-.level.avancé .bar::after,
-.level.courant .bar::after {
-  background: #5cb85c;
-  width: 7.5em;
-}
-
-.level.maîtrise .bar::after,
-.level.langue.maternelle .bar::after {
-  background: #59c596;
-  width: 10em;
+.fluency-label {
+  display: inline-block;
+  margin: 0 0 0.4em 0.4em;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #475569;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
 }
 
 #references .item {
@@ -746,14 +716,8 @@ section .location {
     font-weight: 600;
   }
   #skills .item {
-    display: flex;
-    flex-direction: column;
     margin: 0.3rem 0;
     padding: 0;
-  }
-  #skills .level {
-    margin: 0.1rem 0;
-    font-weight: 400;
   }
   #skills .keywords {
     font-size: 0.9rem;
@@ -788,10 +752,6 @@ section .location {
   ul.keywords li:last-of-type::after,
   ul.courses li:last-of-type::after {
     content: "";
-  }
-  .level em {
-    font-style: normal;
-    padding: 0.1em 0;
   }
   #profiles .item {
     padding: 0;

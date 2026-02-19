@@ -343,12 +343,33 @@ section .location {
 }
 
 .section header .date {
-  float: right;
   display: block;
-  font-size: 1rem;
+  font-size: 0.85rem;
   padding: 0.1em 0;
   color: #606d76;
   font-weight: 400;
+  white-space: nowrap;
+}
+
+.work-item > header,
+.education-item > header,
+.volunteer-item > header,
+.award-item > header,
+.certificate-item > header,
+.project-item > header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.work-item > header .header-left,
+.education-item > header .header-left,
+.volunteer-item > header .header-left,
+.award-item > header .header-left,
+.certificate-item > header .header-left,
+.project-item > header .position {
+  display: block;
 }
 
 .keywords,
@@ -612,7 +633,6 @@ section .location {
     margin: 2rem auto;
   }
   .section header .date {
-    float: right;
     font-weight: 600;
     color: #000;
   }
@@ -624,14 +644,6 @@ section .location {
   .organization::before,
   .awarder::before {
     content: "| ";
-  }
-  .header-left {
-    float: left;
-    width: 70%;
-    word-break: normal;
-  }
-  .section header .date {
-    padding: 0.2em;
   }
 }
 

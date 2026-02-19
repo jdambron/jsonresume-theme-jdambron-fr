@@ -11,17 +11,19 @@
         <label for="work-item-{{@index}}"></label>
         {{/if}}
         <header class="clear">
+          <div class="header-left">
+            {{#if position}}
+            <div class="position">{{position}}</div>
+            {{/if}}
+            {{#if website}}
+              <span class="company">
+                <a target="_blank" href="{{website}}">{{name}}</a>
+              </span>
+            {{else}}
+              <div class="company">{{name}}</div>
+            {{/if}}
+          </div>
           {{> date startDate=startDate endDate=endDate }}
-          {{#if position}}
-          <div class="position">{{position}}</div>
-          {{/if}}
-          {{#if website}}
-            <span class="company">
-              <a target="_blank" href="{{website}}">{{name}}</a>
-            </span>
-          {{else}}
-            <div class="company">{{name}}</div>
-          {{/if}}
         </header>
       {{#if location}}
       <span class="location">

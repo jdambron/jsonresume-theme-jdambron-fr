@@ -7,9 +7,6 @@
   <section id="education">
     {{#each resume.education}}
     <section class="education-item">
-      {{#if summary}}
-        <label for="education-item-{{@index}}"></label>
-      {{/if}}
       <header class="clear">
         {{> date startDate=startDate endDate=endDate }}
         <div class="header-left">

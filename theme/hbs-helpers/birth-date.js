@@ -1,4 +1,3 @@
-const moment = require('moment');
 const { SafeString } = require('handlebars');
 
 const birthDate = (birth) => {
@@ -10,7 +9,7 @@ const birthDate = (birth) => {
     if (birth.place && birth.state) {
       out.push(`, ${birth.state}`);
     }
-    const year = birth.date ? moment(birth.date.toString(), ['YYYY-MM-DD']).format('YYYY') : '';
+    const year = birth.date ? new Intl.DateTimeFormat('fr-FR', { year: 'numeric' }).format(new Date(birth.date)) : '';
     if (year && birth.place && birth.state) {
       out.push(` en ${year}</div>`);
     } else if (year && (!birth.place || birth.state)) {

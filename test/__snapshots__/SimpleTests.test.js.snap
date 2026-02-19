@@ -1,13 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
 
 exports[`SimpleTests If current rendered HTML has changed from previous taken snapshot 1`] = `
 "<!doctype html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Richard Hendriks</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:300,400,500,600&display=swap">
     <style>
       /********************************************
 * 	reset from
@@ -148,7 +150,7 @@ table {
 
 body,
 html {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Inter', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   color: #40484f;
   font-weight: 400;
@@ -193,10 +195,6 @@ em {
   color: #757575;
 }
 
-blockquote {
-  margin-bottom: 1em;
-}
-
 strong {
   font-weight: 700;
 }
@@ -227,19 +225,14 @@ section .location {
   padding: 0;
 }
 
+#header {
+  margin-bottom: 1rem;
+}
+
 #header > #profiles,
-#header > #contact,
-#skills,
-#languages,
-#interests {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+#header > #contact {
   display: flex;
-  -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
-  -webkit-justify-content: flex-start;
   justify-content: flex-start;
 }
 
@@ -269,10 +262,13 @@ section .location {
   border-radius: 4px;
 }
 
-.main-summary {
-  background: #f1f8ff;
-  padding: 1.2em 1em;
+.section.summary header {
   margin-top: 1rem;
+}
+
+.main-summary {
+  background: #eff6ff;
+  padding: 1.2em 1em;
 }
 
 .main-summary p {
@@ -280,14 +276,15 @@ section .location {
 }
 
 .section-title {
-  display: inline-block;
-  background: #fff;
-  padding: 0 1em 0.3em 0;
-  color: #ff6d1f;
+  display: block;
+  color: #2563eb;
   text-transform: uppercase;
   font-weight: 600;
-  border: none;
-  font-size: 0.9rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .section > header {
@@ -296,18 +293,6 @@ section .location {
 
 .fa {
   margin-right: 0.25em;
-}
-
-.section > header::after {
-  position: absolute;
-  left: 0;
-  top: 0.7em;
-  height: 1px;
-  background: #ccc;
-  content: "";
-  width: 100%;
-  z-index: -100;
-  display: block;
 }
 
 .section.main-summary > section {
@@ -337,6 +322,8 @@ section .location {
 .company,
 .organization,
 .institution,
+.certificateName,
+.issuer,
 .date,
 .area,
 .studyType,
@@ -352,13 +339,13 @@ section .location {
 .language,
 .name {
   font-weight: 600;
+  display: inline;
 }
 
 .company::before,
-.institution::before,
 .organization::before,
 .awarder::before {
-  content: "at ";
+  content: "chez ";
 }
 
 .company,
@@ -371,10 +358,32 @@ section .location {
 
 .section header .date {
   display: block;
-  font-size: 1rem;
+  font-size: 0.85rem;
   padding: 0.1em 0;
   color: #606d76;
   font-weight: 400;
+  white-space: nowrap;
+}
+
+.work-item > header,
+.education-item > header,
+.volunteer-item > header,
+.award-item > header,
+.certificate-item > header,
+.project-item > header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.work-item > header .header-left,
+.education-item > header .header-left,
+.volunteer-item > header .header-left,
+.award-item > header .header-left,
+.certificate-item > header .header-left,
+.project-item > header .position {
+  display: block;
 }
 
 .keywords,
@@ -389,15 +398,15 @@ section .location {
   padding: 4px 5px 5px;
   font-size: 0.9rem;
   line-height: 1;
-  color: #3e6d8e;
-  background-color: #dfeaf1;
-  border: 0 solid #dfeaf1;
+  color: #1e40af;
+  background-color: #dbeafe;
+  border: 0 solid #dbeafe;
   white-space: nowrap;
 }
 
 .keywords li:hover,
 .courses li:hover {
-  background: #dfeaf0;
+  background: #bfdbfe;
 }
 
 .highlights {
@@ -505,74 +514,61 @@ section .location {
   color: #2291c3;
 }
 
+/* Two-column layout */
+
+#layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+#sidebar {
+  background: #f7f9fb;
+  border-right: 1px solid #e4e8ed;
+  padding: 1rem 0.85rem 1rem 0;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+#sidebar .keywords li {
+  white-space: normal;
+  font-size: 0.8rem;
+}
+
+
+#main {
+  padding-left: 1.25rem;
+}
+
 #languages .item,
 #skills .item,
 #interests .item {
-  width: 15em;
-  padding: 0 0.5em 0.5em 0;
+  width: 100%;
+  padding: 0 0 0.5em 0;
   border-bottom: none;
 }
 
-#skills .item {
-  width: 16em;
-}
-
 #skills .item .keywords {
-  width: 15em;
+  width: 100%;
 }
 
-/* Skill chart */
-
-.level {
-  margin-bottom: 0.5em;
-}
-
-.level em {
-  padding-left: 0.2em;
-}
-
-.level .bar {
-  border: 1px solid #ddd;
-  display: block;
-  width: 10em;
-  height: 5px;
-  position: relative;
-}
-
-.level .bar::after {
-  position: absolute;
-  content: " ";
-  top: 0;
-  left: 0;
-  background: black;
-  height: 5px;
-}
-
-.level.beginner .bar::after {
-  background: #eb5f51;
-  width: 2.5em;
-}
-
-.level.intermediate .bar::after {
-  background: #ffdf1f;
-  width: 5em;
-}
-
-.level.advanced .bar::after,
-.level.fluent .bar::after {
-  background: #5cb85c;
-  width: 7.5em;
-}
-
-.level.master .bar::after,
-.level.native.speaker .bar::after {
-  background: #59c596;
-  width: 10em;
+.fluency-label {
+  display: inline-block;
+  margin: 0 0 0.4em 0.4em;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #475569;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
 }
 
 #references .item {
   padding-left: 0.5em;
-  border-left: 5px solid #ff6d1f;
+  margin-bottom: 1em;
+  border-left: 5px solid #2563eb;
 }
 
 .section > section > section {
@@ -595,39 +591,36 @@ section .location {
 }
 
 /****************
-*		TABLET
+*     SCREEN
 ****************/
 
-@media screen and (min-width: 602px) {
-  #resume {
-    width: 80%;
-    margin: 0 auto;
+@media screen and (max-width: 800px) {
+  #layout {
+    grid-template-columns: 1fr;
   }
-  .section header .date {
-    float: right;
-    font-weight: 600;
-    color: #000;
+  #sidebar {
+    border-right: none;
+    border-bottom: 1px solid #e4e8ed;
+    padding: 0 0 1rem 0;
+  }
+  #main {
+    padding-left: 0;
+    padding-top: 1rem;
   }
 }
 
-/****************
-*		LAPTOP
-****************/
-
-@media screen and (min-width: 1025px) {
-  li {
-    margin-left: 1.5em;
-  }
+@media screen and (min-width: 801px) {
   #resume {
-    width: 820px;
+    width: 90%;
+    max-width: 900px;
     margin: 2rem auto;
   }
-  .section > section > header .space-left {
-    opacity: 1;
-    cursor: pointer;
+  .section header .date {
+    font-weight: 600;
+    color: #000;
   }
   .section > section:not(.main-summary) {
-    margin-left: 1.67rem;
+    margin-left: 0.5rem;
   }
   .company::before,
   .institution::before,
@@ -635,51 +628,61 @@ section .location {
   .awarder::before {
     content: "| ";
   }
-  .header-left {
-    float: left;
-    width: 70%;
-    word-break: normal;
-  }
-  .section header .date {
-    padding: 0.2em;
-  }
-  .display {
-    display: none;
-  }
-  .display:not(.none) {
-    display: block;
-  }
 }
 
 @media print {
-  #profiles a:not(.hide-href-print)::after{
+  #profiles a:not(.hide-href-print)::after {
     content: " (" attr(href) ") ";
   }
+  #profiles .url .show-only-url-print {
+    display: none;
+  }
+  #profiles .url a::after {
+    content: attr(href);
+  }
   #resume {
-    margin: 0.1em;
-    padding: 0.1em;
-    -ms-word-wrap: break-word;
+    margin: 0;
+    padding: 0;
     word-wrap: break-word;
     line-height: 1.25;
   }
+  #layout {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 0;
+  }
+  #sidebar {
+    background: #f7f9fb;
+    border-right: 1px solid #e4e8ed;
+    padding: 0.5rem 0.6rem 0.5rem 0;
+  }
+  #sidebar .section-title {
+    background: #f7f9fb;
+  }
+  #main {
+    padding-left: 1rem;
+    padding-top: 0;
+  }
   @page {
-    margin: 1cm 1.4cm;
+    margin: 1cm 1.2cm;
   }
   .item-count {
     display: none;
   }
+  .company a {
+    color: #40484f;
+  }
   .company::before,
-  .institution::before,
   .organization::before,
   .awarder::before {
-    content: "at ";
+    content: "chez ";
   }
   .main-summary {
     padding: 0;
     background: transparent;
   }
   .section {
-    margin: 0.8rem 0;
+    margin: 0.6rem 0;
     padding: 0;
   }
   .section header {
@@ -689,7 +692,8 @@ section .location {
     padding-bottom: 0.15rem;
   }
   .section > section > section {
-    margin: 0 0 1em 0;
+    border-bottom: 1px solid #fdfdfd;
+    margin: 0.4em 0;
   }
   .section > section > section:last-of-type {
     margin: 0;
@@ -717,7 +721,7 @@ section .location {
   ul.keywords li::after,
   ul.courses li::after {
     padding: 0 0 0 0.1rem;
-    content: " |";
+    content: ", ";
   }
   ul.keywords::before,
   ul.courses::before {
@@ -725,14 +729,22 @@ section .location {
     font-weight: 600;
   }
   #skills .item {
-    width: calc(100% / 3);
+    margin: 0.3rem 0;
     padding: 0;
   }
+  #skills .keywords {
+    font-size: 0.9rem;
+    margin: 0;
+  }
   .highlights {
-    margin: 0.5em 0 0 0;
+    margin: 0.4em 0 0 0;
+  }
+  .highlights > li > p {
+    margin-bottom: 0.3em;
   }
   ul.keywords::before {
-    content: "Skills acquired: ";
+    content: "Compétences acquises: ";
+    font-size: 1rem;
   }
   #skills .keywords::before {
     content: none;
@@ -742,28 +754,27 @@ section .location {
     padding: 0;
   }
   ul.courses::before {
-    content: "Major courses: ";
+    content: "Cours principaux: ";
+    font-size: 1rem;
+  }
+  ul.keywords li,
+  ul.courses li {
+    font-size: 1rem;
+    line-height: inherit;
   }
   ul.keywords li:last-of-type::after,
   ul.courses li:last-of-type::after {
     content: "";
   }
-  .level em {
-    font-style: normal;
-    padding: 0.1em 0;
-  }
-  .level .bar {
-    display: none;
-  }
   #profiles .item {
     padding: 0;
   }
-  .item.display {
-    display: block;
-    opacity: 1 !important;
-  }
   .fa-location-dot:before {
     padding-left: 0.1em;
+  }
+  .work-item,
+  .education-item {
+    page-break-inside: avoid;
   }
 }
 
@@ -782,7 +793,7 @@ section .location {
       			<span class="postalCode">CA 94115,</span>
       			<span class="city">San Francisco,</span>
       			<span class="region">California</span>
-      			<span class="countryCode">US</span>
+      			<span class="countryCode">(US)</span>
       		</span>
       
       
@@ -793,7 +804,7 @@ section .location {
       			</div>
       			<div class="phone">
       				<span class="fa-solid fa-mobile-screen-button"></span>
-      				<a class="hide-href-print" href="tel:(912) 555-4321">(912) 555-4321</a>
+      				<a class="hide-href-print" href="tel:(912) 555-4321">(912)&nbsp;555&#8209;4321</a>
       			</div>
       		</div>
       
@@ -802,7 +813,7 @@ section .location {
       				<div class="username">
       					<span class="fa-brands fa-twitter twitter social"></span>
       					<span class="url">
-      						<a target="_blank" href="https://www.twitter.com">neutralthoughts</a>
+      						<a target="_blank" href="https://www.twitter.com"><span class="show-only-url-print">neutralthoughts</span></a>
       					</span>
       				</div>
       			</div>
@@ -810,297 +821,302 @@ section .location {
       				<div class="username">
       					<span class="fa-brands fa-soundcloud soundcloud social"></span>
       					<span class="url">
-      						<a target="_blank" href="https://soundcloud.example.com/dandymusicnl">dandymusicnl</a>
+      						<a target="_blank" href="https://soundcloud.example.com/dandymusicnl"><span class="show-only-url-print">dandymusicnl</span></a>
       					</span>
       				</div>
       			</div>
       		</div>
       	</header>
       
-      	<section class="section">
+      	<section class="section summary">
+          <header>
+            <h2 class="section-title">Résumé</h2>
+          </header>
       		<section class="main-summary">
-      			<div><p><p>Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinal!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!</p></p></div>
+      			<div><p>Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinal!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!</p>
+      </div>
       		</section>
       	</section>
       
-      <section class="section">
-      	<header>
-      		<h2 class='section-title'>Skills <span class="item-count">(2)</span></h2>
-      	</header>
-      	<section id="skills">
-      		<div class="item">
-      			<h3 class="name">
-      				Web Development
-      			</h3>
-      			 
-      			<div class="level master">
-      				<em>Master</em>
-      				<div class="bar"></div>
-      			</div>
-      			<ul class="keywords">
-      				<li>HTML</li>
-      				<li>CSS</li>
-      				<li>Javascript</li>
-      			</ul>
-      		</div>
-      		<div class="item">
-      			<h3 class="name">
-      				Compression
-      			</h3>
-      			 
-      			<div class="level master">
-      				<em>Master</em>
-      				<div class="bar"></div>
-      			</div>
-      			<ul class="keywords">
-      				<li>Mpeg</li>
-      				<li>MP4</li>
-      				<li>GIF</li>
-      			</ul>
-      		</div>
-      	</section>
-      </section>
-      <section class="section">
-        <header>
-          <h2 class='section-title'>Work Experience <span class="item-count">(1)</span></h2>
-        </header>
-      
-        <section id="work">
-          <section class="work-item">
-              <label for="work-item-0"></label>
-              <header class="clear">
-                  <div class="date">
-                    <span class="startDate">Dec 2013</span>
-                      <span class="endDate">- Dec 2014</span>
-                  </div>
-                <div class="position">CEO/President</div>
-                  <div class="company">Pied Piper</div>
-              </header>
-            <span class="location">
-              <span class="fa-solid fa-location-dot"></span>
-              Palo Alto, CA
-            </span>
-            <span class="url">
-              <span class="fa-solid fa-up-right-from-square"></span>
-              <a target="_blank" href="http://piedpiper.example.com">http://piedpiper.example.com</a>
-            </span>        <div class="item" id="work-item">
-              <div class="summary"><p><p>Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.</p></p></div>
-              <ul class="highlights">
-                <li><p><p>Build an algorithm for artist to detect if their music was violating copy right infringement laws</p></p></li>
-                <li><p><p>Successfully won Techcrunch Disrupt</p></p></li>
-                <li><p><p>Optimized an algorithm that holds the current world record for Weisman Scores</p></p></li>
-              </ul>
-            </div>
-          </section>
-        </section>
-      </section>
-      <section class="section">
-        <header>
-          <h2 class='section-title'>Projects <span class="item-count">(1)</span></h2>
-        </header>
-        <section id="projects">
-          <section class="project-item">
-            <header class="clear">
-                <div class="date">
-                  <span class="startDate">Aug 2016</span>
-                    <span class="endDate">- Aug 2016</span>
-                </div>
-              <div class="position">Miss Direction</div>
+      <div id="layout">
+        <aside id="sidebar">
+          <section class="section">
+            <header>
+              <h2 class='section-title'>Compétences</h2>
             </header>
-            <span class="website">
-              <span class="fa-solid fa-up-right-from-square"></span>
-              <a target="_blank" href="http://missdirection.example.com">http://missdirection.example.com</a>
-            </span>
-            <ul class="keywords">
-                <li>GoogleMaps</li>
-                <li>Chrome Extension</li>
-                <li>Javascript</li>
-            </ul>
-            <div class="item">
-              <ul class="highlights">
-                  <li><p><p>Won award at AIHacks 2016</p></p></li>
-                  <li><p><p>Built by all women team of newbie programmers</p></p></li>
-                  <li><p><p>Using modern technologies such as GoogleMaps, Chrome Extension and Javascript</p></p></li>
-              </ul>
-            </div>
-          </section>
-        </section>
-      </section>
-      <section class="section">
-        <header>
-          <h2 class='section-title'>Volunteer</h2>
-        </header>
-        <section id="volunteer">
-          <section class="volunteer-item">
-      
-            <label for="volunteer-item-0"></label>
-      
-            <header class="clear">
-                <div class="date">
-                  <span class="startDate">Jan 2012</span>
-                    <span class="endDate">- Jan 2013</span>
-                </div>
-              <div class="header-left">
-                <div class="position">
-                  Teacher
-                </div>
-                <div class="organization">
-                  CoderDojo
-                </div>
+            <section id="skills">
+              <div class="item">
+                <h3 class="name">
+                  Web Development
+                </h3>
+                  <span class="fluency-label">Master</span>
+                <ul class="keywords">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Javascript</li>
+                </ul>
               </div>
-             
-            </header>
-            <div class="item">
-              <div class="summary"><p><p>Global movement of free coding clubs for young people.</p></p></div>
-              <ul class="highlights">
-                <li><p><p>Awarded 'Teacher of the Month'</p></p></li>
-              </ul>
-            </div>
-          </section>
-        </section>
-      </section>
-      <section class="section">
-        <header>
-          <h2 class='section-title'>Education <span class="item-count">(1)</span></h2>
-        </header>
-      
-        <section id="education">
-          <section class="education-item">
-            <header class="clear">
-                <div class="date">
-                  <span class="startDate">Jun 2011</span>
-                    <span class="endDate">- Jan 2014</span>
-                </div>
-              <div class="header-left">
-                <div class="studyType">
-                  Bachelor
-                </div>
-                <div class="area">
-                  Information Technology
-                </div>
-                <div class="institution">
-                  University of Oklahoma
-                </div>
+              <div class="item">
+                <h3 class="name">
+                  Compression
+                </h3>
+                  <span class="fluency-label">Master</span>
+                <ul class="keywords">
+                  <li>Mpeg</li>
+                  <li>MP4</li>
+                  <li>GIF</li>
+                </ul>
               </div>
-            </header>
-      
-      
-            <ul class="courses">
-              <li>DB1101 - Basic SQL</li>
-              <li>CS2011 - Java Introduction</li>
-            </ul>
-      
-            <div class="item">
-            </div>
+            </section>
           </section>
-        </section>
-      </section>
-        <section class="section">
-          <header>
-            <h2 class="section-title">Awards <span class="item-count">(1)</span></h2>
-          </header>
-          <section id="awards">
-              <section class="award-item">
-                  <label for="award-item-0"></label>
-      
-                <header class="clear">
-                    <div class="date">
-                      Nov 2014
+          <section class="section">
+            <header>
+              <h2 class='section-title'>Langues <span class="item-count">(1)</span></h2>
+            </header>
+            <section id="languages">
+              <div class="display">
+                <h3 class="language">English</h3>
+                <span class="fluency-label">Native speaker</span>
+              </div>
+            </section>
+          </section>
+          <section class="section">
+            <header>
+              <h2 class='section-title'>Interests <span class="item-count">(1)</span></h2>
+            </header>
+            <section id="interests">
+              <div class="item">
+                <h3 class="name">
+                  Wildlife
+                </h3>
+                <ul class="keywords">
+                  <li>Ferrets</li>
+                  <li>Unicorns</li>
+                </ul>
+              </div>
+            </section>
+          </section>
+        </aside>
+        <main id="main">
+          <section class="section">
+            <header>
+              <h2 class='section-title'>Expérience Professionnelle <span class="item-count">(1)</span></h2>
+            </header>
+          
+            <section id="work">
+              <section class="work-item">
+                  <header class="clear">
+                    <div class="header-left">
+                      <div class="position">CEO/President</div>
+                        <div class="company">Pied Piper</div>
                     </div>
-                  <div class="header-left">
-                      <div class="title">
-                        Digital Compression Pioneer Award
+                      <div class="date">
+                        <span class="startDate">déc. 2013</span>
+                          <span class="endDate">- déc. 2014</span>
                       </div>
-                      <div class="awarder">
-                        Techcrunch
-                      </div>
-                  </div>
-                </header>
-      
-                <div class="item">
-                    <div class="summary"><p><p>There is no spoon.</p></p></div>
+                  </header>
+                <span class="location">
+                  <span class="fa-solid fa-location-dot"></span>
+                  Palo Alto, CA
+                </span>
+                <span class="url">
+                  <span class="fa-solid fa-up-right-from-square"></span>
+                  <a target="_blank" href="http://piedpiper.example.com">http://piedpiper.example.com</a>
+                </span>        <div class="item" id="work-item">
+                  <div class="summary"><p>Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.</p>
+          </div>
+                  <ul class="highlights">
+                    <li><p>Build an algorithm for artist to detect if their music was violating copy right infringement laws</p>
+          </li>
+                    <li><p>Successfully won Techcrunch Disrupt</p>
+          </li>
+                    <li><p>Optimized an algorithm that holds the current world record for Weisman Scores</p>
+          </li>
+                  </ul>
                 </div>
               </section>
+            </section>
           </section>
-        </section>
-      <section class="section">
-        <header>
-          <h2 class='section-title'>Publications</h2>
-        </header>
-        <section id="publications">
-          <section class="publication-item">
-            <label for="publication-item-0"></label>
-      
-            <header class="clear">
-              <span class="date">
-                1 Oct 2014
-              </span>
-              <div class="header-left">
-                <span class="name">
-                  Video compression for 3d media
-                </span>
-                <span class="publisher">
-                  in Hooli
-                </span>
-              </div>
-             
+          <section class="section">
+            <header>
+              <h2 class='section-title'>Projets <span class="item-count">(1)</span></h2>
             </header>
-      
-            <div class="item">
-              <div class="summary"><p><p>Innovative middle-out compression algorithm that changes the way we store data.</p></p></div>
-            </div>
+            <section id="projects">
+              <section class="project-item">
+                <header class="clear">
+                    <div class="date">
+                      <span class="startDate">août 2016</span>
+                        <span class="endDate">- août 2016</span>
+                    </div>
+                  <div class="position">Miss Direction</div>
+                </header>
+                <span class="website">
+                  <span class="fa-solid fa-up-right-from-square"></span>
+                  <a target="_blank" href="http://missdirection.example.com">http://missdirection.example.com</a>
+                </span>
+                <ul class="keywords">
+                    <li>GoogleMaps</li>
+                    <li>Chrome Extension</li>
+                    <li>Javascript</li>
+                </ul>
+                <div class="item">
+                    <div class="summary"><p>A mapping engine that misguides you</p>
+          </div>
+                  <ul class="highlights">
+                      <li><p>Won award at AIHacks 2016</p>
+          </li>
+                      <li><p>Built by all women team of newbie programmers</p>
+          </li>
+                      <li><p>Using modern technologies such as GoogleMaps, Chrome Extension and Javascript</p>
+          </li>
+                  </ul>
+                </div>
+              </section>
+            </section>
           </section>
-        </section>
-      </section>
-      <section class="section">
-        <header>
-          <h2 class='section-title'>Languages <span class="item-count">(1)</span></h2>
-        </header>
-        <section id="languages">
-          <div class="display">
-            <h3 class="language">
-              English
-            </h3>
-            <div class="item">
-              <div class="level fluency native speaker">
-                <em>Native speaker</em>
-                <div class="bar"></div>
+          <section class="section">
+            <header>
+              <h2 class='section-title'>Volontariat</h2>
+            </header>
+            <section id="volunteer">
+              <section class="volunteer-item">
+          
+                <header class="clear">
+                    <div class="date">
+                      <span class="startDate">janv. 2012</span>
+                        <span class="endDate">- janv. 2013</span>
+                    </div>
+                  <div class="header-left">
+                    <div class="position">
+                      Teacher
+                    </div>
+                    <div class="organization">
+                      CoderDojo
+                    </div>
+                  </div>
+                 
+                </header>
+                <div class="item">
+                  <div class="summary"><p>Global movement of free coding clubs for young people.</p>
+          </div>
+                  <ul class="highlights">
+                    <li><p>Awarded 'Teacher of the Month'</p>
+          </li>
+                  </ul>
+                </div>
+              </section>
+            </section>
+          </section>
+          <section class="section">
+            <header>
+              <h2 class='section-title'>Education <span class="item-count">(1)</span></h2>
+            </header>
+          
+            <section id="education">
+              <section class="education-item">
+                <header class="clear">
+                    <div class="date">
+                      <span class="startDate">juin 2011</span>
+                        <span class="endDate">- janv. 2014</span>
+                    </div>
+                  <div class="header-left">
+                    <div class="studyType">
+                      Bachelor
+                    </div>
+                    <div class="area">
+                      Information Technology
+                    </div>
+                    <div class="institution">
+                      University of Oklahoma
+                    </div>
+                  </div>
+                </header>
+          
+          
+                <ul class="courses">
+                  <li>DB1101 - Basic SQL</li>
+                  <li>CS2011 - Java Introduction</li>
+                </ul>
+          
+                <div class="item">
+                </div>
+              </section>
+            </section>
+          </section>
+            <section class="section">
+              <header>
+                <h2 class="section-title">Récompenses <span class="item-count">(1)</span></h2>
+              </header>
+              <section id="awards">
+                  <section class="award-item">
+          
+                    <header class="clear">
+                        <div class="date">
+                          nov. 2014
+                        </div>
+                      <div class="header-left">
+                          <div class="title">
+                            Digital Compression Pioneer Award
+                          </div>
+                          <div class="awarder">
+                            Techcrunch
+                          </div>
+                      </div>
+                    </header>
+          
+                    <div class="item">
+                        <div class="summary"><p>There is no spoon.</p>
+          </div>
+                    </div>
+                  </section>
+              </section>
+            </section>
+          <section class="section">
+            <header>
+              <h2 class='section-title'>Publications</h2>
+            </header>
+            <section id="publications">
+              <section class="publication-item">
+          
+                <header class="clear">
+                  <span class="date">
+                    oct. 2014
+                  </span>
+                  <div class="header-left">
+                    <span class="name">
+                      Video compression for 3d media
+                    </span>
+                    <span class="publisher">
+                      in Hooli
+                    </span>
+                  </div>
+                 
+                </header>
+          
+                <div class="item">
+                  <div class="summary"><p>Innovative middle-out compression algorithm that changes the way we store data.</p>
+          </div>
+                </div>
+              </section>
+            </section>
+          </section>
+          <section class="section">
+            <header>
+              <h2 class='section-title'>Références</h2>
+            </header>
+            <section id="references">
+              <div class="item">
+                <blockquote class="reference">
+                  &#8220;&#32;It is my pleasure to recommend Richard, his performance working as a consultant for Main St. Company proved that he will be a valuable addition to any company.&#32;&#8221;
+                </blockquote>
+                <div class="name">
+                  Erlich Bachman
+                </div>
               </div>
-            </div>
-          </div>
-        </section>
-      </section>
-      <section class="section">
-        <header>
-          <h2 class='section-title'>Interests <span class="item-count">(1)</span></h2>
-        </header>
-        <section id="interests">
-          <div class="item">
-            <h3 class="name">
-              Wildlife
-            </h3>
-            <ul class="keywords">
-              <li>Ferrets</li>
-              <li>Unicorns</li>
-            </ul>
-          </div>
-        </section>
-      </section>
-      <section class="section">
-        <header>
-          <h2 class='section-title'>References</h2>
-        </header>
-        <section id="references">
-          <div class="item">
-            <blockquote class="reference">
-              &#8220;&#32;It is my pleasure to recommend Richard, his performance working as a consultant for Main St. Company proved that he will be a valuable addition to any company.&#32;&#8221;
-            </blockquote>
-            <div class="name">
-              Erlich Bachman
-            </div>
-          </div>
-        </section>
-      </section>
+            </section>
+          </section>
+        </main>
+      </div>
     </div>
   </body>
 </html>

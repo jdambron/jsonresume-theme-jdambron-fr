@@ -263,14 +263,15 @@ section .location {
 }
 
 .section-title {
-  display: inline-block;
-  background: #fff;
-  padding: 0 1em 0.3em 0;
+  display: block;
   color: #2563eb;
   text-transform: uppercase;
   font-weight: 600;
-  border: none;
-  font-size: 0.9rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .section > header {
@@ -279,18 +280,6 @@ section .location {
 
 .fa {
   margin-right: 0.25em;
-}
-
-.section > header::after {
-  position: absolute;
-  left: 0;
-  top: 0.7em;
-  height: 1px;
-  background: #ccc;
-  content: "";
-  width: 100%;
-  z-index: -100;
-  display: block;
 }
 
 .section.main-summary > section {
@@ -506,9 +495,6 @@ section .location {
   min-height: 100%;
 }
 
-#sidebar .section-title {
-  background: #f7f9fb;
-}
 
 #main {
   padding-left: 1.25rem;

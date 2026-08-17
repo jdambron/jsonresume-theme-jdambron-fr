@@ -2,7 +2,7 @@
 
 exports[`SimpleTests If current rendered HTML has changed from previous taken snapshot 1`] = `
 "<!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -376,7 +376,7 @@ section .location {
 .company::before,
 .organization::before,
 .awarder::before {
-  content: "at ";
+  content: "chez ";
 }
 
 .company,
@@ -733,7 +733,7 @@ section .location {
   .company::before,
   .organization::before,
   .awarder::before {
-    content: "at ";
+    content: "chez ";
   }
   .main-summary {
     padding: 0;
@@ -807,7 +807,7 @@ section .location {
     margin-bottom: 0.3em;
   }
   ul.keywords::before {
-    content: "Skills: ";
+    content: "Compétences acquises: ";
     font-size: 1rem;
   }
   #skills .keywords::before {
@@ -818,7 +818,7 @@ section .location {
     padding: 0;
   }
   ul.courses::before {
-    content: "Major courses: ";
+    content: "Cours principaux: ";
     font-size: 1rem;
   }
   ul.keywords li,
@@ -876,7 +876,7 @@ section .location {
       			</div>
       		</div>
       
-      		<nav id="profiles" aria-label="Social profiles">
+      		<nav id="profiles" aria-label="Profils sociaux">
       			<div class="item">
       				<div class="username">
       					<span class="fa-brands fa-twitter twitter social"></span>
@@ -898,7 +898,7 @@ section .location {
       
       	<section class="section summary">
           <header>
-            <h2 class="section-title">Summary</h2>
+            <h2 class="section-title">Résumé</h2>
           </header>
       		<section class="main-summary">
       			<div><p>Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinal!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!</p>
@@ -910,7 +910,7 @@ section .location {
         <aside id="sidebar">
           <section class="section">
             <header>
-              <h2 class='section-title'>Skills</h2>
+              <h2 class='section-title'>Compétences</h2>
             </header>
             <section id="skills">
               <div class="item">
@@ -939,7 +939,7 @@ section .location {
           </section>
           <section class="section">
             <header>
-              <h2 class='section-title'>Languages <span class="item-count">(1)</span></h2>
+              <h2 class='section-title'>Langues <span class="item-count">(1)</span></h2>
             </header>
             <section id="languages">
               <div class="display">
@@ -950,7 +950,7 @@ section .location {
           </section>
           <section class="section">
             <header>
-              <h2 class='section-title'>Interests <span class="item-count">(1)</span></h2>
+              <h2 class='section-title'>Centres d'intérêts <span class="item-count">(1)</span></h2>
             </header>
             <section id="interests">
               <div class="item">
@@ -968,7 +968,7 @@ section .location {
         <main id="main">
           <section class="section">
             <header>
-              <h2 class='section-title'>Work Experience <span class="item-count">(1)</span></h2>
+              <h2 class='section-title'>Expérience Professionnelle <span class="item-count">(1)</span></h2>
             </header>
           
             <section id="work">
@@ -981,8 +981,8 @@ section .location {
                         </span>
                     </div>
                       <div class="date">
-                        <span class="startDate">Dec 2013</span>
-                          <span class="endDate">- Dec 2014</span>
+                        <span class="startDate">déc. 2013</span>
+                          <span class="endDate">- déc. 2014</span>
                       </div>
                   </header>
                 <span class="location">
@@ -1006,14 +1006,14 @@ section .location {
           </section>
           <section class="section">
             <header>
-              <h2 class='section-title'>Projects <span class="item-count">(1)</span></h2>
+              <h2 class='section-title'>Projets <span class="item-count">(1)</span></h2>
             </header>
             <section id="projects">
               <section class="project-item">
                 <header class="clear">
                     <div class="date">
-                      <span class="startDate">Aug 2016</span>
-                        <span class="endDate">- Aug 2016</span>
+                      <span class="startDate">août 2016</span>
+                        <span class="endDate">- août 2016</span>
                     </div>
                   <div class="position">Miss Direction</div>
                 </header>
@@ -1043,15 +1043,15 @@ section .location {
           </section>
           <section class="section">
             <header>
-              <h2 class='section-title'>Volunteer</h2>
+              <h2 class='section-title'>Volontariat</h2>
             </header>
             <section id="volunteer">
               <section class="volunteer-item">
           
                 <header class="clear">
                     <div class="date">
-                      <span class="startDate">Jan 2012</span>
-                        <span class="endDate">- Jan 2013</span>
+                      <span class="startDate">janv. 2012</span>
+                        <span class="endDate">- janv. 2013</span>
                     </div>
                   <div class="header-left">
                     <div class="position">
@@ -1076,15 +1076,15 @@ section .location {
           </section>
           <section class="section">
             <header>
-              <h2 class='section-title'>Education <span class="item-count">(1)</span></h2>
+              <h2 class='section-title'>Formation <span class="item-count">(1)</span></h2>
             </header>
           
             <section id="education">
               <section class="education-item">
                 <header>
                     <div class="date">
-                      <span class="startDate">Jun 2011</span>
-                        <span class="endDate">- Jan 2014</span>
+                      <span class="startDate">juin 2011</span>
+                        <span class="endDate">- janv. 2014</span>
                     </div>
                   <div class="header-left">
                     <div class="studyType">
@@ -1112,14 +1112,14 @@ section .location {
           </section>
             <section class="section">
               <header>
-                <h2 class="section-title">Awards <span class="item-count">(1)</span></h2>
+                <h2 class="section-title">Récompenses <span class="item-count">(1)</span></h2>
               </header>
               <section id="awards">
                   <section class="award-item">
           
                     <header class="clear">
                         <div class="date">
-                          Nov 2014
+                          nov. 2014
                         </div>
                       <div class="header-left">
                           <div class="title">
@@ -1147,7 +1147,7 @@ section .location {
           
                 <header class="clear">
                   <span class="date">
-                    Oct 2014
+                    oct. 2014
                   </span>
                   <div class="header-left">
                     <span class="name">
@@ -1157,7 +1157,7 @@ section .location {
                       </span>
                     </span>
                     <span class="publisher">
-                      in Hooli
+                      dans Hooli
                     </span>
                   </div>
                  
@@ -1172,7 +1172,7 @@ section .location {
           </section>
           <section class="section">
             <header>
-              <h2 class='section-title'>References</h2>
+              <h2 class='section-title'>Références</h2>
             </header>
             <section id="references">
               <div class="item">

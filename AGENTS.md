@@ -1,6 +1,6 @@
 # AGENTS.md
 
-JSON Resume theme (Handlebars + CSS). CommonJS. Fork of `jsonresume-theme-stackoverflow` (`upstream` remote).
+JSON Resume theme (Handlebars + CSS). CommonJS. French localization of `jsonresume-theme-jdambron` (`upstream` remote).
 
 ## Commands
 
@@ -21,7 +21,7 @@ JSON Resume theme (Handlebars + CSS). CommonJS. Fork of `jsonresume-theme-stacko
 - Fixture: `@jsonresume/schema/sample.resume.json`.
 - Snapshot is the full rendered HTML, including inlined CSS and fonts. Any template or `style.css` change updates `test/__snapshots__/SimpleTests.test.js.snap`.
 - `beforeEach` writes `test/TestOutput/` (gitignored except `.gitignore`).
-- Dates use `new Date(...)` + `Intl.DateTimeFormat('en-US')`. Snapshots can differ by timezone.
+- Dates use `new Date(...)` + `Intl.DateTimeFormat('fr-FR')`. Snapshots can differ by timezone.
 
 ## Schema and output
 
@@ -30,3 +30,8 @@ JSON Resume theme (Handlebars + CSS). CommonJS. Fork of `jsonresume-theme-stacko
 - `paragraphSplit` is markdown-it (`html: false`, `linkify: true`). Keep raw HTML disabled.
 - Profile icons: `fa-brands fa-{{spaceToDash network}}` — `network` must match a Font Awesome brand slug.
 - `resume.json` / `resume.html` / `resume.pdf` are local preview artifacts and are gitignored.
+
+## French overlay
+
+- Keep package identity (`jsonresume-theme-jdambron-fr`), `html lang="fr"`, and `fr-FR` date formatting.
+- Keep French UI strings when porting upstream. Do not reintroduce English section titles or CSS `content` labels.

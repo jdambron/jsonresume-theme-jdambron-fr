@@ -1,11 +1,11 @@
 {
-  "name": "jsonresume-theme-jdambron",
+  "name": "jsonresume-theme-jdambron-fr",
   "version": "1.2.1",
-  "description": "Julien Dambron's theme for JSON Resume",
+  "description": "French localized Julien Dambron's theme for JSON Resume",
   "author": "Julien Dambron",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jdambron/jsonresume-theme-jdambron.git"
+    "url": "git+https://github.com/jdambron/jsonresume-theme-jdambron-fr.git"
   },
   "license": "MIT",
   "main": "index.js",

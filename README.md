@@ -1,4 +1,4 @@
-# Julien Dambron's theme for jsonresume [![npm version](https://badge.fury.io/js/jsonresume-theme-jdambron.svg)](https://badge.fury.io/js/jsonresume-theme-jdambron)
+# French localized Julien Dambron's theme for jsonresume [![npm version](https://badge.fury.io/js/jsonresume-theme-jdambron-fr.svg)](https://badge.fury.io/js/jsonresume-theme-jdambron-fr)
 
 A theme for my resume, freely inspired from the Stackoverflow theme.
 

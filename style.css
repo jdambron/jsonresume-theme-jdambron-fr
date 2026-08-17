@@ -365,7 +365,7 @@ section .location {
 .company::before,
 .organization::before,
 .awarder::before {
-  content: "at ";
+  content: "chez ";
 }
 
 .company,
@@ -722,7 +722,7 @@ section .location {
   .company::before,
   .organization::before,
   .awarder::before {
-    content: "at ";
+    content: "chez ";
   }
   .main-summary {
     padding: 0;
@@ -796,7 +796,7 @@ section .location {
     margin-bottom: 0.3em;
   }
   ul.keywords::before {
-    content: "Skills: ";
+    content: "Compétences acquises: ";
     font-size: 1rem;
   }
   #skills .keywords::before {
@@ -807,7 +807,7 @@ section .location {
     padding: 0;
   }
   ul.courses::before {
-    content: "Major courses: ";
+    content: "Cours principaux: ";
     font-size: 1rem;
   }
   ul.keywords li,

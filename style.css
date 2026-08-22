@@ -237,6 +237,11 @@ section .location {
   font-weight: 700;
 }
 
+/* Separator between location fields, only rendered between existing spans */
+#header .location > span + span::before {
+  content: ", ";
+}
+
 #contact {
   margin-top: 0.5rem;
 }

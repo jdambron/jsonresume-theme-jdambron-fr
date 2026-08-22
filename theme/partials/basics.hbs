@@ -15,21 +15,11 @@
 
 		{{#location}}
 		<span class="location">
-			{{#if address}}
-			<span class="address">{{address}},</span>
-			{{/if}}
-			{{#if postalCode}}
-			<span class="postalCode">{{postalCode}},</span>
-			{{/if}}
-			{{#if city}}
-			<span class="city">{{city}},</span>
-			{{/if}}
-			{{#if region}}
-			<span class="region">{{region}}</span>
-			{{/if}}
-			{{#if countryCode}}
-			<span class="countryCode">({{countryCode}})</span>
-			{{/if}}
+			{{#if address}}<span class="address">{{address}}</span>{{/if}}
+			{{#if postalCode}}<span class="postalCode">{{postalCode}}</span>{{/if}}
+			{{#if city}}<span class="city">{{city}}</span>{{/if}}
+			{{#if region}}<span class="region">{{region}}</span>{{/if}}
+			{{#if countryCode}}<span class="countryCode">({{countryCode}})</span>{{/if}}
 		</span>
 		{{/location}}
 

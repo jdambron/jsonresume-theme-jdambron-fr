@@ -1,5 +1,6 @@
 const renderer = require("../index")
 const exampleCVJSON = require("@jsonresume/schema/sample.resume.json")
+const emptyCVJSON = {}
 const fs = require('node:fs');
 const HtmlValidate = require("html-validate");
 
@@ -51,5 +52,12 @@ describe("SimpleTests",  () => {
    * in the terminal or using "npm run updateTestSnapshots" script, see package.json. */
   test("If current rendered HTML has changed from previous taken snapshot", () => {
       expect(result).toMatchSnapshot();
+  });
+
+  test("Does the render function work with an empty resume?", async () => {
+    const emptyResult = renderer.render(emptyCVJSON);
+    expect(emptyResult).toBeDefined();
+    expect(emptyResult.length).toBeGreaterThan(0);
+    expect(await isHTMLValid(emptyResult, false)).toBe(true);
   });
 });

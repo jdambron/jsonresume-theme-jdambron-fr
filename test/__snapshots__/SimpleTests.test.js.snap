@@ -248,6 +248,11 @@ section .location {
   font-weight: 700;
 }
 
+/* Separator between location fields, only rendered between existing spans */
+#header .location > span + span::before {
+  content: ", ";
+}
+
 #contact {
   margin-top: 0.5rem;
 }
@@ -853,9 +858,9 @@ section .location {
       		</div>
       
       		<span class="location">
-      			<span class="address">2712 Broadway St,</span>
-      			<span class="postalCode">CA 94115,</span>
-      			<span class="city">San Francisco,</span>
+      			<span class="address">2712 Broadway St</span>
+      			<span class="postalCode">CA 94115</span>
+      			<span class="city">San Francisco</span>
       			<span class="region">California</span>
       			<span class="countryCode">(US)</span>
       		</span>

@@ -1,6 +1,10 @@
-const Handlebars = require('handlebars');
+const HandlebarsLib = require('handlebars');
 const { readFileSync, readdirSync } = require('fs');
 const { join } = require('path');
+
+// Use an isolated Handlebars environment so this theme never mutates the
+// global registry (which would clash with other themes in the same process).
+const Handlebars = HandlebarsLib.create();
 
 const HELPERS = join(__dirname, 'theme/hbs-helpers');
 
@@ -26,15 +30,15 @@ function render(resume) {
   const css = readFileSync(`${__dirname}/style.css`, 'utf-8');
   const template = readFileSync(`${__dirname}/resume.hbs`, 'utf-8');
   const partialsDir = join(__dirname, 'theme/partials');
-  const filenamePartial = readdirSync(partialsDir);
+  const filenames = readdirSync(partialsDir);
 
-  filenamePartial.forEach((filenamePartial) => {
-    const matches = /^([^.]+).hbs$/.exec(filenamePartial);
+  filenames.forEach((filename) => {
+    const matches = /^([^.]+)\.hbs$/.exec(filename);
     if (!matches) return;
     const name = matches[1];
-    const filepath = join(partialsDir, filenamePartial);
-    const template = readFileSync(filepath, 'utf8');
-    Handlebars.registerPartial(name, template);
+    const filepath = join(partialsDir, filename);
+    const partialTemplate = readFileSync(filepath, 'utf8');
+    Handlebars.registerPartial(name, partialTemplate);
   });
 
   return Handlebars.compile(template)({
@@ -45,6 +49,7 @@ function render(resume) {
 
 const marginValue = '0.8 cm';
 const pdfRenderOptions = {
+  format: 'A4',
   margin: {
     top: marginValue,
     bottom: marginValue,

@@ -1,9 +1,11 @@
+const { parseDate } = require('./parse-date.js');
+
 const formatDate = (date, options) => {
-  if (date == null || date === '') {
-    return '';
-  }
-  const d = new Date(date);
-  if (isNaN(d.getTime())) {
+  const d = parseDate(date);
+  if (!d) {
+    if (date == null || date === '') {
+      return '';
+    }
     // Fall back to the raw value when it is not a parseable date.
     return String(date);
   }

@@ -2,8 +2,11 @@ const { birthDate } = require('../theme/hbs-helpers/birth-date.js');
 const { dateHelpers } = require('../theme/hbs-helpers/date-helpers.js');
 const { formatPhone } = require('../theme/hbs-helpers/format-phone.js');
 const { paragraphSplit } = require('../theme/hbs-helpers/paragraph-split.js');
+const { parseDate } = require('../theme/hbs-helpers/parse-date.js');
 const { spaceToDash } = require('../theme/hbs-helpers/space-to-dash.js');
 const { toLowerCase } = require('../theme/hbs-helpers/to-lower-case.js');
+const { execFileSync } = require('node:child_process');
+const { join } = require('node:path');
 
 describe('birth-date helper', () => {
   test('returns empty string for missing or empty birth', () => {
@@ -39,9 +42,78 @@ describe('birth-date helper', () => {
   });
 });
 
+describe('parseDate helper', () => {
+  test('returns null for empty and nullish values', () => {
+    expect(parseDate('')).toBeNull();
+    expect(parseDate(null)).toBeNull();
+    expect(parseDate(undefined)).toBeNull();
+  });
+
+  test('builds date-only strings at local midnight, not UTC', () => {
+    const date = parseDate('2020-01-01');
+    expect(date.getFullYear()).toBe(2020);
+    expect(date.getMonth()).toBe(0);
+    expect(date.getDate()).toBe(1);
+    expect(date.getHours()).toBe(0);
+  });
+
+  test('builds year-month strings at local midnight', () => {
+    const date = parseDate('2020-07');
+    expect(date.getFullYear()).toBe(2020);
+    expect(date.getMonth()).toBe(6);
+    expect(date.getDate()).toBe(1);
+  });
+
+  test('accepts a valid leap day', () => {
+    const date = parseDate('2020-02-29');
+    expect(date.getDate()).toBe(29);
+  });
+
+  test('rejects out-of-range dates instead of rolling over', () => {
+    expect(parseDate('2020-02-31')).toBeNull();
+    expect(parseDate('2021-02-29')).toBeNull();
+    expect(parseDate('2020-13-01')).toBeNull();
+    expect(parseDate('2020-00-10')).toBeNull();
+  });
+
+  test('still honours the offset of full ISO timestamps', () => {
+    // An explicit offset makes the instant unambiguous, so it must not be
+    // reinterpreted as a local calendar date.
+    expect(parseDate('2020-07-01T23:30:00Z').getHours()).toBe(new Date('2020-07-01T23:30:00Z').getHours());
+    expect(parseDate('2020-07-01T00:00:00+02:00').getTime())
+      .toBe(new Date('2020-07-01T00:00:00+02:00').getTime());
+  });
+
+  test('passes through Date instances', () => {
+    const input = new Date(2020, 6, 1);
+    expect(parseDate(input).getTime()).toBe(input.getTime());
+    expect(parseDate(new Date('nope'))).toBeNull();
+  });
+
+  test('returns null for unparseable strings', () => {
+    expect(parseDate('en cours')).toBeNull();
+    expect(parseDate('not-a-date')).toBeNull();
+  });
+});
+
 describe('date helpers', () => {
   test('MY formats month + year', () => {
     expect(dateHelpers.MY('2020-07-01')).toBe('juil. 2020');
+  });
+
+  test('formats identically in timezones behind UTC', () => {
+    // `new Date('2020-01-01')` is UTC midnight, which would render as "déc. 2019"
+    // in America/* and break the PDF output for those users.
+    const script = `
+      const { dateHelpers } = require(${JSON.stringify(join(__dirname, '../theme/hbs-helpers/date-helpers.js'))});
+      process.stdout.write(JSON.stringify([dateHelpers.MY('2020-01-01'), dateHelpers.MY('2020-07-01')]));
+    `;
+    const results = ['UTC', 'America/Los_Angeles', 'America/New_York', 'Europe/Paris', 'Asia/Tokyo']
+      .map(zone => execFileSync(process.execPath, ['-e', script], { env: { ...process.env, TZ: zone } }).toString());
+
+    for (const out of results) {
+      expect(JSON.parse(out)).toEqual(['janv. 2020', 'juil. 2020']);
+    }
   });
 
   test('Y formats year only', () => {

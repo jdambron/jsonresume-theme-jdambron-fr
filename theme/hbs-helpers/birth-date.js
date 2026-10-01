@@ -1,4 +1,5 @@
 const { SafeString } = require('handlebars');
+const { parseDate } = require('./parse-date.js');
 
 const birthDate = (birth) => {
   const out = [];
@@ -9,11 +10,9 @@ const birthDate = (birth) => {
   const hasPlace = Boolean(birth.place);
   const hasState = Boolean(birth.state);
   let year = '';
-  if (birth.date) {
-    const d = new Date(birth.date);
-    if (!isNaN(d.getTime())) {
-      year = new Intl.DateTimeFormat('fr-FR', { year: 'numeric' }).format(d);
-    }
+  const d = parseDate(birth.date);
+  if (d) {
+    year = new Intl.DateTimeFormat('fr-FR', { year: 'numeric' }).format(d);
   }
 
   if (hasPlace) {

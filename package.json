@@ -9,6 +9,12 @@
   },
   "license": "MIT",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "resume.hbs",
+    "style.css",
+    "theme/"
+  ],
   "scripts": {
     "test": "jest --coverage --verbose",
     "updateTestSnapshots": "jest --updateSnapshot"

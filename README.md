@@ -25,7 +25,6 @@ On top of the [JSON Resume schema](https://jsonresume.org/schema/), this theme s
 - `basics.degree` — texte libre rendu sous le label (ex. « Diplôme d'ingénieur »).
 - `skills[].levelDisplay` — free-form text shown instead of the numeric/standard `level`.
 - `languages[].fluencyDisplay` — free-form text shown instead of the standard `fluency` value.
-- `education[].gpa` — rendu sous la forme « Note : … » dans l'entrée de formation.
 
 ## Notes
 

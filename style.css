@@ -477,11 +477,6 @@ section .location {
   overflow: hidden;
 }
 
-.gpa {
-  clear: both;
-  padding-bottom: 0.5em;
-}
-
 .fa.social {
   font-size: 1.1em;
 }

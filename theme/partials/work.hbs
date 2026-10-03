@@ -26,12 +26,7 @@
           </div>
           {{> date startDate=startDate endDate=endDate }}
         </header>
-      {{#if location}}
-      <span class="location">
-        <span class="fa-solid fa-location-dot"></span>
-        {{location}}
-      </span>
-      {{/if}}
+      {{> location locationString=location }}
       {{#if keywords.length}}
       <ul class="keywords">
         {{#each keywords}}

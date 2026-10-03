@@ -255,8 +255,19 @@ section .location {
   font-weight: 700;
 }
 
-/* Separator between location fields, only rendered between existing spans */
+/* Separator between location fields, only rendered between existing spans.
+   The header (basics.hbs) has no icon span and renders all fields, so it
+   keeps its own blanket rule; section locations use the explicit pairs. */
 #header .location > span + span::before {
+  content: ", ";
+}
+
+.location > .city + .countryCode::before,
+.location > .countryCode + .region::before {
+  content: " ";
+}
+
+.location > .city + .region::before {
   content: ", ";
 }
 

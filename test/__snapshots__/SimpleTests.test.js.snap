@@ -265,8 +265,19 @@ section .location {
   font-weight: 700;
 }
 
-/* Separator between location fields, only rendered between existing spans */
+/* Separator between location fields, only rendered between existing spans.
+   The header (basics.hbs) has no icon span and renders all fields, so it
+   keeps its own blanket rule; section locations use the explicit pairs. */
 #header .location > span + span::before {
+  content: ", ";
+}
+
+.location > .city + .countryCode::before,
+.location > .countryCode + .region::before {
+  content: " ";
+}
+
+.location > .city + .region::before {
   content: ", ";
 }
 
@@ -1079,7 +1090,7 @@ section .location {
                   </header>
                 <span class="location">
                   <span class="fa-solid fa-location-dot"></span>
-                  Palo Alto, CA
+                  <span class="text">Palo Alto, CA</span>
                 </span>
                 <div class="item">
                   <div class="summary"><p>Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.</p>

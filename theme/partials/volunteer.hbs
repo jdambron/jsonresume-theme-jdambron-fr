@@ -40,26 +40,7 @@
         {{> date startDate=startDate endDate=endDate }}
       </header>
       {{/if}}
-      {{#location}}
-      <span class="location">
-        <span class="fa-solid fa-location-dot"></span>
-        {{#if city}}
-        <span class="city">
-          {{city}},
-        </span>
-        {{/if}}
-        {{#if countryCode}}
-        <span class="countryCode">
-          ({{countryCode}})
-        </span>
-        {{/if}}
-        {{#if region}}
-        <span class="region">
-          {{region}}
-        </span>
-        {{/if}}
-      </span>
-      {{/location}}
+      {{> location location=location }}
       {{#if keywords.length}}
       <ul class="keywords">
         {{#each keywords}}

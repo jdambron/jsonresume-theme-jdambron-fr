@@ -1,0 +1,23 @@
+{{!-- Renders an entry location with the pin icon. Accepts either:
+  - locationString: a plain string (resume.work[].location)
+  - location: a location object { city, countryCode, region }
+Separators between fields come from style.css (.location > …::before). --}}
+{{#if locationString}}
+<span class="location">
+  <span class="fa-solid fa-location-dot"></span>
+  <span class="text">{{locationString}}</span>
+</span>
+{{else if location}}
+<span class="location">
+  <span class="fa-solid fa-location-dot"></span>
+  {{#if location.city}}
+  <span class="city">{{location.city}}</span>
+  {{/if}}
+  {{#if location.countryCode}}
+  <span class="countryCode">({{location.countryCode}})</span>
+  {{/if}}
+  {{#if location.region}}
+  <span class="region">{{location.region}}</span>
+  {{/if}}
+</span>
+{{/if}}

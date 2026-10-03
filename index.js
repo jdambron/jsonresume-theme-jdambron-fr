@@ -55,7 +55,8 @@ const pdfRenderOptions = {
     bottom: marginValue,
     left: marginValue,
     right: marginValue,
-  }
+  },
+  printBackground: true,
 }
 
 module.exports = { render, pdfRenderOptions };

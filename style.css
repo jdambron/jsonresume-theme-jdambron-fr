@@ -1,3 +1,21 @@
+/* Design tokens */
+:root {
+  --accent: var(--accent);
+  --text: var(--text);
+  --text-muted: var(--text-muted);
+  --text-faint: var(--text-faint);
+  --heading: var(--heading);
+  --link: var(--link);
+  --link-hover: var(--link-hover);
+  --border: var(--border);
+  --border-soft: var(--border-soft);
+  --sidebar-bg: var(--sidebar-bg);
+  --summary-bg: var(--summary-bg);
+  --pill-bg: var(--pill-bg);
+  --pill-bg-hover: var(--pill-bg-hover);
+  --pill-text: var(--pill-text);
+}
+
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -167,7 +185,7 @@ body,
 html {
   font-family: 'Inter', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
-  color: #40484f;
+  color: var(--text);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.46153846;
@@ -179,17 +197,17 @@ p {
 }
 
 a {
-  color: #0095ff;
+  color: var(--link);
   text-decoration: none;
 }
 
 a:hover {
-  color: #0c65a5;
+  color: var(--link-hover);
   text-decoration: underline;
 }
 
 a:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -212,7 +230,7 @@ h3 {
 }
 
 em {
-  color: #757575;
+  color: var(--text-faint);
 }
 
 strong {
@@ -233,7 +251,7 @@ strong {
 
 section .location {
   margin-right: 0.5em;
-  color: #606d76;
+  color: var(--text-muted);
   font-weight: 700;
 }
 
@@ -276,13 +294,13 @@ section .location {
 }
 
 #header h2.label {
-  color: #202931;
+  color: var(--heading);
   font-size: 1.47rem;
   font-weight: 300;
 }
 
 #header .degree {
-  color: #606d76;
+  color: var(--text-muted);
 }
 
 #header .image {
@@ -296,7 +314,7 @@ section .location {
 }
 
 .main-summary {
-  background: #eff6ff;
+  background: var(--summary-bg);
   padding: 1.2em 1em;
 }
 
@@ -306,12 +324,12 @@ section .location {
 
 .section-title {
   display: block;
-  color: #2563eb;
+  color: var(--accent);
   text-transform: uppercase;
   font-weight: 600;
   font-size: 0.65rem;
   letter-spacing: 0.12em;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--border);
   padding-bottom: 0.25rem;
   margin-bottom: 0.75rem;
 }
@@ -381,7 +399,7 @@ section .location {
 .institution,
 .organization,
 .awarder {
-  color: #606d76;
+  color: var(--text-muted);
   font-weight: 400;
 }
 
@@ -389,7 +407,7 @@ section .location {
   display: block;
   font-size: 0.85rem;
   padding: 0.1em 0;
-  color: #606d76;
+  color: var(--text-muted);
   font-weight: 400;
   white-space: nowrap;
 }
@@ -397,7 +415,7 @@ section .location {
 .work-item,
 .education-item {
   position: relative;
-  border-left: 2px solid #e2e8f0;
+  border-left: 2px solid var(--border);
   padding-left: 1.25rem;
   margin-left: 0.5rem;
   padding-bottom: 1.5rem;
@@ -417,7 +435,7 @@ section .location {
   top: 5px;
   width: 8px;
   height: 8px;
-  background-color: #2563eb;
+  background-color: var(--accent);
   border-radius: 50%;
 }
 
@@ -454,15 +472,15 @@ section .location {
   padding: 4px 5px 5px;
   font-size: 0.9rem;
   line-height: 1;
-  color: #1e40af;
-  background-color: #dbeafe;
-  border: 0 solid #dbeafe;
+  color: var(--pill-text);
+  background-color: var(--pill-bg);
+  border: 0 solid var(--pill-bg);
   white-space: nowrap;
 }
 
 .keywords li:hover,
 .courses li:hover {
-  background: #bfdbfe;
+  background: var(--pill-bg-hover);
 }
 
 .highlights {
@@ -575,8 +593,8 @@ section .location {
 }
 
 #sidebar {
-  background: #f7f9fb;
-  border-right: 1px solid #e4e8ed;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border-soft);
   padding: 1rem 0.85rem 1rem 0;
   min-height: 100%;
   overflow: hidden;
@@ -612,14 +630,14 @@ section .location {
   font-weight: 500;
   color: #475569;
   background: #f1f5f9;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   border-radius: 999px;
 }
 
 #references .item {
   padding-left: 0.5em;
   margin-bottom: 1em;
-  border-left: 5px solid #2563eb;
+  border-left: 5px solid var(--accent);
 }
 
 .section > section > section {
@@ -651,7 +669,7 @@ section .location {
   }
   #sidebar {
     border-right: none;
-    border-bottom: 1px solid #e4e8ed;
+    border-bottom: 1px solid var(--border-soft);
     padding: 0 0 1rem 0;
   }
   #main {
@@ -703,12 +721,12 @@ section .location {
     gap: 0;
   }
   #sidebar {
-    background: #f7f9fb;
-    border-right: 1px solid #e4e8ed;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border-soft);
     padding: 0.5rem 0.6rem 0.5rem 0;
   }
   #sidebar .section-title {
-    background: #f7f9fb;
+    background: var(--sidebar-bg);
   }
   #main {
     padding-left: 1rem;
@@ -721,7 +739,7 @@ section .location {
     display: none;
   }
   .company a {
-    color: #40484f;
+    color: var(--text);
   }
   .company::before,
   .organization::before,

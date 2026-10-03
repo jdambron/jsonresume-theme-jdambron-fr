@@ -10,20 +10,20 @@ exports[`SimpleTests If current rendered HTML has changed from previous taken sn
     <style>
       /* Design tokens */
 :root {
-  --accent: var(--accent);
-  --text: var(--text);
-  --text-muted: var(--text-muted);
-  --text-faint: var(--text-faint);
-  --heading: var(--heading);
-  --link: var(--link);
-  --link-hover: var(--link-hover);
-  --border: var(--border);
-  --border-soft: var(--border-soft);
-  --sidebar-bg: var(--sidebar-bg);
-  --summary-bg: var(--summary-bg);
-  --pill-bg: var(--pill-bg);
-  --pill-bg-hover: var(--pill-bg-hover);
-  --pill-text: var(--pill-text);
+  --accent: #2563eb;
+  --text: #40484f;
+  --text-muted: #606d76;
+  --text-faint: #757575;
+  --heading: #202931;
+  --link: #0095ff;
+  --link-hover: #0c65a5;
+  --border: #e2e8f0;
+  --border-soft: #e4e8ed;
+  --sidebar-bg: #f7f9fb;
+  --summary-bg: #eff6ff;
+  --pill-bg: #dbeafe;
+  --pill-bg-hover: #bfdbfe;
+  --pill-text: #1e40af;
 }
 
 @font-face {

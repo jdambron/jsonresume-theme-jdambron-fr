@@ -292,6 +292,10 @@ section .location {
   font-weight: 300;
 }
 
+#header .degree {
+  color: #606d76;
+}
+
 #header .image {
   width: 11em;
   float: right;
@@ -855,6 +859,7 @@ section .location {
       		<div>
       			<h1 class="name">Richard Hendriks</h1>
       			<h2 class="label">Programmer</h2>
+      			
       		</div>
       
       		<span class="location">

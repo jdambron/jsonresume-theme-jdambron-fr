@@ -281,6 +281,10 @@ section .location {
   font-weight: 300;
 }
 
+#header .degree {
+  color: #606d76;
+}
+
 #header .image {
   width: 11em;
   float: right;

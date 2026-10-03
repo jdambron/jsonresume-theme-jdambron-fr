@@ -27,7 +27,10 @@ Handlebars.registerHelper('spaceToDash', spaceToDash);
 Handlebars.registerHelper('formatPhone', formatPhone);
 
 function render(resume) {
-  const css = readFileSync(`${__dirname}/style.css`, 'utf-8');
+  const css =
+    readFileSync(`${__dirname}/style.css`, 'utf-8') +
+    '\n' +
+    readFileSync(`${__dirname}/theme/icons.css`, 'utf-8');
   const template = readFileSync(`${__dirname}/resume.hbs`, 'utf-8');
   const partialsDir = join(__dirname, 'theme/partials');
   const filenames = readdirSync(partialsDir);

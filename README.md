@@ -28,8 +28,8 @@ On top of the [JSON Resume schema](https://jsonresume.org/schema/), this theme s
 
 ## Notes
 
-- Profile icons use Font Awesome brand icons: the `network` field must match a [Font Awesome brand slug](https://fontawesome.com/search?icons=brands) (e.g. `github`, `linkedin`).
-- Font Awesome itself is loaded from a CDN (`cdnjs.cloudflare.com`), so HTML rendering requires an internet connection. Fonts and CSS, however, are embedded.
+- Profile icons use Font Awesome brand icons: the `network` field must match a [Font Awesome brand slug](https://fontawesome.com/search?icons=brands) (e.g. `github`, `linkedin`). Seules les icônes de marques listées dans `scripts/build-icons.js` sont embarquées.
+- Les polices Font Awesome sont sous-ensemblées sur les icônes utilisées par le thème et embarquées en base64 (`theme/icons.css`), le rendu fonctionne donc entièrement hors-ligne. Pour ajouter ou retirer des icônes, modifiez les listes dans `scripts/build-icons.js` et lancez `bun run build:icons`.
 - Markdown is supported in `summary` / `highlights` fields (raw HTML is disabled, links are auto-linkified).
 
 ## Development

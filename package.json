@@ -17,15 +17,18 @@
   ],
   "scripts": {
     "test": "jest --coverage --verbose",
-    "updateTestSnapshots": "jest --updateSnapshot"
+    "updateTestSnapshots": "jest --updateSnapshot",
+    "build:icons": "node scripts/build-icons.js"
   },
   "dependencies": {
     "handlebars": "^4.7.8",
     "markdown-it": "^14.1.1"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@jsonresume/schema": "^1.2.1",
     "html-validate": "^10.9.0",
     "jest": "^30.2.0",
-    "@jsonresume/schema": "^1.2.1"
+    "subset-font": "^2.9.0"
   }
 }

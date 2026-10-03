@@ -7,7 +7,6 @@
     {{#each resume.volunteer}}
     <section class="volunteer-item">
       {{#if organization}}
-
       <header class="clear">
         {{> date startDate=startDate endDate=endDate }}
         <div class="header-left">
@@ -26,7 +25,19 @@
             {{/if}}
           </div>
         </div>
-       
+      </header>
+      {{else if position}}
+      <header class="clear">
+        {{> date startDate=startDate endDate=endDate }}
+        <div class="header-left">
+          <div class="position">
+            {{position}}
+          </div>
+        </div>
+      </header>
+      {{else if startDate}}
+      <header class="clear">
+        {{> date startDate=startDate endDate=endDate }}
       </header>
       {{/if}}
       {{#location}}

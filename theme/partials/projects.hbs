@@ -9,9 +9,11 @@
       {{#if name}}
       <header class="clear">
         {{> date startDate=startDate endDate=endDate }}
-        {{#if name}}
         <div class="position">{{name}}</div>
-        {{/if}}
+      </header>
+      {{else if startDate}}
+      <header class="clear">
+        {{> date startDate=startDate endDate=endDate }}
       </header>
       {{/if}}
       {{#location}}

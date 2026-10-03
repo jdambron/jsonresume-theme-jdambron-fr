@@ -282,7 +282,7 @@ section .location {
 
 #header h1.name {
   font-size: 2.8rem;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 100%;
 }
 
@@ -1052,7 +1052,6 @@ section .location {
             </header>
             <section id="volunteer">
               <section class="volunteer-item">
-          
                 <header class="clear">
                     <div class="date">
                       <span class="startDate">janv. 2012</span>
@@ -1066,7 +1065,6 @@ section .location {
                       <a target="_blank" href="http://coderdojo.example.com/">CoderDojo</a>
                     </div>
                   </div>
-                 
                 </header>
                 <div class="item">
                   <div class="summary"><p>Global movement of free coding clubs for young people.</p>
